@@ -16,7 +16,7 @@ body {
 }
 
 .testcard-container {
-  --width: 700px;
+  --width: 900px;
   --height: calc(var(--width) * 0.75);
   --cell-width: calc(var(--width) / 20);
   --cell-height: calc(var(--height) / 16);
@@ -121,7 +121,7 @@ body {
             font-size: calc(var(--width) * 0.13);
             color: #fff;
             filter: drop-shadow(0 1px 2px #000a);
-            transform: translateY(15px);
+            transform: translateY(calc(var(--height) * 0.036));
           }
         }
 
