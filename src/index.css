@@ -1,0 +1,244 @@
+:root {
+  --fancy-color1: #884ced;
+  --fancy-color2: #ec1cce;
+}
+
+body {
+  background: black;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 95vw;
+  height: 95vh;
+}
+
+.testcard-container {
+  --width: 550px;
+  --height: 412px;
+  --cell-width: calc(var(--width) / 20);
+  --cell-height: calc(var(--height) / 16);
+
+  width: var(--width);
+  height: var(--height);
+  background: #fff;
+  clip-path: inset(10px 5px 10px 5px);
+  position: relative;
+
+  & .testcard {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+    grid-template-rows: repeat(16, 1fr);
+    gap: 2px;
+
+    & .cell {
+      background: #808080;
+
+      --color1: black;
+      --color2: white;
+
+      &.top { background: linear-gradient(to top, var(--color1) 25%, var(--color2) 25% 100%); }
+      &.left { background: linear-gradient(to left, var(--color1) 25%, var(--color2) 25% 100%); }
+      &.right { background: linear-gradient(to right, var(--color1) 25%, var(--color2) 25% 100%); }
+      &.bottom { background: linear-gradient(to bottom, var(--color1) 25%, var(--color2) 25% 100%); }
+
+      &.invert {
+        --color1: white;
+        --color2: black;
+      }
+
+      /* Limit case */
+      &:nth-child(320) {
+        --color1: black;
+        --color2: white;
+
+        transform: rotate(270deg) scaleX(-1);
+      }
+
+      &:nth-child(263) { grid-column-start: span 4; }
+      &:nth-child(272) { grid-column-start: span 4; }
+
+      &:nth-child(273),
+      &:nth-child(274),
+      &:nth-child(275),
+      &:nth-child(276),
+      &:nth-child(277),
+      &:nth-child(278) {
+        display: none;
+      }
+    }
+  }
+
+  & .orangebox-container {
+    width: var(--width);
+    height: var(--height);
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & .orangebox {
+      width: calc(var(--width) * 0.6999);
+      height: calc(var(--height) * 0.623);
+      background: #ff7f00;
+    }
+  }
+
+  & .circlecard-container {
+    width: var(--width);
+    height: var(--height);
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & .circlecard {
+      width: calc(var(--width) * 0.64);
+      height: calc(var(--height) * 0.82);
+      border-radius: 50%;
+      overflow: hidden;
+      background: var(--fancy-color1);
+
+      & .blocks {
+        & .title.block {
+          width: 100%;
+          height: 117px;
+          background: var(--fancy-color1);
+          display: flex;
+          justify-content: center;
+          align-items: flex-end;
+
+          & .text {
+            font-family: "Bebas Neue", sans-serif;
+            font-size: 72px;
+            color: #fff;
+            filter: drop-shadow(0 1px 2px #000a);
+            transform: translateY(15px);
+          }
+        }
+
+        & .group {
+          display: flex;
+        }
+
+        & .primary-color {
+          width: 100%;
+          height: calc(var(--cell-height) * 2);
+        }
+
+        & .grayscale-color {
+          width: 100%;
+          height: calc(var(--cell-height) * 2);
+          background: blue;
+        }
+
+        & .gradient {
+          width: 100%;
+          height: calc(var(--cell-height) * 2);
+          background: green;
+        }
+
+        & .black-white {
+          width: 100%;
+          height: var(--cell-height);
+          background: white;
+          display: flex;
+          justify-content: center;
+        }
+
+        & .block {
+          background: var(--bgcolor);
+          width: 100%;
+          height: 100%;
+
+          &.square { width: 85%; }
+
+          &.yellow { --bgcolor: #dfdf1f; }
+          &.cyan { --bgcolor: #1fe0df; }
+          &.green { --bgcolor: #20df20; }
+          &.pink { --bgcolor: #df20df; }
+          &.red { --bgcolor: #de2020; }
+          &.blue { --bgcolor: #2021de; }
+          &.black { --bgcolor: #000; }
+          &.black-100 { --bgcolor: #323232; }
+          &.black-200 { --bgcolor: #656565; }
+          &.white { --bgcolor: #fff; }
+          &.white-100 { --bgcolor: #ccc; }
+          &.white-200 { --bgcolor: #989898; }
+          &.grad-1 { --bgcolor: repeating-linear-gradient(to right, #000 0, #fff 4px, #000 8px); }
+          &.grad-2 { --bgcolor: repeating-linear-gradient(to right, #000 0, #fff 4px, #000 5px); }
+          &.grad-3 { --bgcolor: repeating-linear-gradient(to right, #000 0, #fff 2px, #000 4px); }
+          &.grad-4 { --bgcolor: repeating-linear-gradient(to right, #000 0, #fff 1px, #000 3px); }
+          &.grad-5 { --bgcolor: repeating-linear-gradient(to right, #000 0, #fff 2px); }
+        }
+
+        & .layer {
+          width: 100%;
+
+          &.black {
+            width: 48%;
+            background: black;
+
+            & .cell {
+              width: var(--cell-width);
+              height: 100%;
+              border-right: 1px solid #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  & .cross-container {
+    width: var(--width);
+    height: var(--height);
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & .cross-inner-container {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      width: 185px;
+      height: 70px;
+
+      & .cross {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &::before {
+          content: "";
+          display: block;
+          width: 1px;
+          height: 100%;
+          background: #fff;
+          position: absolute;
+        }
+
+        &::after {
+          content: "";
+          display: block;
+          width: 100%;
+          height: 1px;
+          background: #fff;
+          position: absolute;
+        }
+      }
+    }
+  }
+}
