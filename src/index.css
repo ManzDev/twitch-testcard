@@ -16,8 +16,8 @@ body {
 }
 
 .testcard-container {
-  --width: 550px;
-  --height: 412px;
+  --width: 700px;
+  --height: calc(var(--width) * 0.75);
   --cell-width: calc(var(--width) / 20);
   --cell-height: calc(var(--height) / 16);
 
@@ -110,7 +110,7 @@ body {
       & .blocks {
         & .title.block {
           width: 100%;
-          height: 117px;
+          height: calc(var(--height) * 0.2855);
           background: var(--fancy-color1);
           display: flex;
           justify-content: center;
@@ -118,7 +118,7 @@ body {
 
           & .text {
             font-family: "Bebas Neue", sans-serif;
-            font-size: 72px;
+            font-size: calc(var(--width) * 0.13);
             color: #fff;
             filter: drop-shadow(0 1px 2px #000a);
             transform: translateY(15px);
@@ -212,8 +212,8 @@ body {
       display: grid;
       grid-template-columns: repeat(7, 1fr);
       grid-template-rows: repeat(3, 1fr);
-      width: 185px;
-      height: 70px;
+      width: calc(var(--width) * 0.335);
+      height: calc(var(--width) * 0.128);
 
       & .cross {
         position: relative;
