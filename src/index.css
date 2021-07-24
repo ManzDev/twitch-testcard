@@ -16,12 +16,12 @@ body {
 }
 
 .testcard-container {
-  --width: 900px;
-  --height: calc(var(--width) * 0.75);
+  --width: calc(var(--height) / 0.75);
+  --height: 500px;
   --cell-width: calc(var(--width) / 20);
   --cell-height: calc(var(--height) / 16);
 
-  width: var(--width);
+  width: var(--width, 900px);
   height: var(--height);
   background: #fff;
   clip-path: inset(10px 5px 10px 5px);

@@ -1,3 +1,4 @@
+const testcardContainer = document.querySelector(".testcard-container");
 const testcard = document.querySelector(".testcard");
 
 const addCell = (cellNumber) => {
@@ -37,3 +38,5 @@ const addCell = (cellNumber) => {
 for (let i = 0; i < 320; i++) {
   addCell(i);
 }
+
+testcardContainer.style.setProperty("--height", `${innerHeight - 100}px`);
