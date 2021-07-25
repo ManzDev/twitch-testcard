@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "Bebas Neue";
+  src:
+    url(/bebas-neue.woff2) format("woff2"),
+    url(/bebas-neue.woff) format("woff");
+}
+
 :root {
   --fancy-color1: #884ced;
   --fancy-color2: #ec1cce;
